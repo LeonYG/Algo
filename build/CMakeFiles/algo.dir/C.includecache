@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/hello.h
+
+/home/lyg/workspace/remote/algo/src/hello.c
+hello.h
+/home/lyg/workspace/remote/algo/src/hello.h
+stdio.h
+-
+
+/home/lyg/workspace/remote/algo/src/main.c
+stdio.h
+-
+hello.h
+/home/lyg/workspace/remote/algo/src/hello.h
+
