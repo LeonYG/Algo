@@ -5,5 +5,9 @@ CMakeFiles/algo.dir/src/hello.c.o
  ../include/hello.h
  /home/lyg/workspace/remote/algo/src/hello.c
 CMakeFiles/algo.dir/src/main.c.o
- ../include/hello.h
+ .././include/hello.h
+ .././include/measure.h
  /home/lyg/workspace/remote/algo/src/main.c
+CMakeFiles/algo.dir/src/measure.c.o
+ .././include/measure.h
+ /home/lyg/workspace/remote/algo/src/measure.c

@@ -4,6 +4,10 @@
 CMakeFiles/algo.dir/src/hello.c.o: ../include/hello.h
 CMakeFiles/algo.dir/src/hello.c.o: ../src/hello.c
 
-CMakeFiles/algo.dir/src/main.c.o: ../include/hello.h
+CMakeFiles/algo.dir/src/main.c.o: .././include/hello.h
+CMakeFiles/algo.dir/src/main.c.o: .././include/measure.h
 CMakeFiles/algo.dir/src/main.c.o: ../src/main.c
+
+CMakeFiles/algo.dir/src/measure.c.o: .././include/measure.h
+CMakeFiles/algo.dir/src/measure.c.o: ../src/measure.c
 

@@ -6,5 +6,5 @@ C_FLAGS =
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/lyg/workspace/remote/algo/include 
+C_INCLUDES = -I/home/lyg/workspace/remote/algo/./include 
 

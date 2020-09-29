@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/algo.dir/src/main.c.o"
   "CMakeFiles/algo.dir/src/hello.c.o"
+  "CMakeFiles/algo.dir/src/measure.c.o"
   "algo.pdb"
   "algo"
 )

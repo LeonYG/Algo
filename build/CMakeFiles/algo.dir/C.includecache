@@ -6,12 +6,12 @@
 
 #IncludeRegexTransform: 
 
-../include/hello.h
+.././include/hello.h
 
-/home/lyg/workspace/remote/algo/src/hello.c
-hello.h
-/home/lyg/workspace/remote/algo/src/hello.h
-stdio.h
+.././include/measure.h
+sys/time.h
+-
+time.h
 -
 
 /home/lyg/workspace/remote/algo/src/main.c
@@ -19,4 +19,6 @@ stdio.h
 -
 hello.h
 /home/lyg/workspace/remote/algo/src/hello.h
+measure.h
+/home/lyg/workspace/remote/algo/src/measure.h
 

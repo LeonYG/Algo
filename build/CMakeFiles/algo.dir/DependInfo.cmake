@@ -6,12 +6,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/home/lyg/workspace/remote/algo/src/hello.c" "/home/lyg/workspace/remote/algo/build/CMakeFiles/algo.dir/src/hello.c.o"
   "/home/lyg/workspace/remote/algo/src/main.c" "/home/lyg/workspace/remote/algo/build/CMakeFiles/algo.dir/src/main.c.o"
+  "/home/lyg/workspace/remote/algo/src/measure.c" "/home/lyg/workspace/remote/algo/build/CMakeFiles/algo.dir/src/measure.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "../include"
+  ".././include"
   )
 
 # Targets to which this target links.

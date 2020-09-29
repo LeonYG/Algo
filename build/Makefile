@@ -177,6 +177,33 @@ src/main.c.s:
 	$(MAKE) -f CMakeFiles/algo.dir/build.make CMakeFiles/algo.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/measure.o: src/measure.c.o
+
+.PHONY : src/measure.o
+
+# target to build an object file
+src/measure.c.o:
+	$(MAKE) -f CMakeFiles/algo.dir/build.make CMakeFiles/algo.dir/src/measure.c.o
+.PHONY : src/measure.c.o
+
+src/measure.i: src/measure.c.i
+
+.PHONY : src/measure.i
+
+# target to preprocess a source file
+src/measure.c.i:
+	$(MAKE) -f CMakeFiles/algo.dir/build.make CMakeFiles/algo.dir/src/measure.c.i
+.PHONY : src/measure.c.i
+
+src/measure.s: src/measure.c.s
+
+.PHONY : src/measure.s
+
+# target to generate assembly for a file
+src/measure.c.s:
+	$(MAKE) -f CMakeFiles/algo.dir/build.make CMakeFiles/algo.dir/src/measure.c.s
+.PHONY : src/measure.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +219,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/measure.o"
+	@echo "... src/measure.i"
+	@echo "... src/measure.s"
 .PHONY : help
 
 
