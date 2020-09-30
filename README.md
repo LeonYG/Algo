@@ -13,5 +13,5 @@
     gcc version 9.2.1 20191008 (Ubuntu 9.2.1-9ubuntu2) 
 
 # Modules:
- <measure>
+ [measure]
     Tool for calculating running time
