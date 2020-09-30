@@ -1,5 +1,6 @@
 # Algo
-    In order to learn programming ideas and implement some algorithms, use the computing time to compare the performance of the algorithm horizontally or vertically
+    In order to learn programming ideas and implement some algorithms, use the computing time to 
+    compare the performance of the algorithm horizontally or vertically
 # env:
     gcc:
     Using built-in specs.
