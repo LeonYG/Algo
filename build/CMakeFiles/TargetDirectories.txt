@@ -1,3 +1,0 @@
-/home/lyg/workspace/remote/algo/build/CMakeFiles/rebuild_cache.dir
-/home/lyg/workspace/remote/algo/build/CMakeFiles/algo.dir
-/home/lyg/workspace/remote/algo/build/CMakeFiles/edit_cache.dir

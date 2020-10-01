@@ -1,0 +1,52 @@
+#! /bin/bash
+
+DEPEND_LIBSRC=""
+
+HELP_MSG(){
+    echo "select one algo interface to test"
+    echo "  -i algo type:[fib] [NULL] ..."
+}
+
+compile_lib(){
+    cd lib
+    cmake -DLIBSRC=$DEPEND_LIBSRC
+    make
+    cd ..
+}
+
+compile(){
+    cd build
+    cmake ..
+    make
+    cd ..
+}
+
+clean(){
+    cd lib
+    rm -rf CMakeFiles
+    cd ../build
+    rm -rf CMakeFiles
+}
+
+while getopts "i:" arg
+do
+    case $arg in
+        i)
+        if [ $OPTARG=="fib" ]
+        then
+            DEPEND_LIBSRC="fib"
+        fi
+        ;;
+        ?)
+            echo "bad param"
+            HELP_MSG
+            exit 1
+        ;;
+    esac
+done
+
+compile_lib
+
+compile
+
+clean

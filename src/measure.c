@@ -36,3 +36,15 @@ int update_current_stamp(measure_time_t* timep){
     gettimeofday(&(timep->current_eval),NULL);
     return SUCCESS;
 }
+
+void time_measure_display(measure_time_t* timep){
+    printf("    $time used: %lu(s) %lu(us)\n",
+        (timep->current_sec - timep->start_sec),
+        (timep->current_eval.tv_usec - timep->start_eval.tv_usec));
+}
+
+void time_measure_record(measure_time_t* timep){
+    printf("    $time used: %lu(s) %lu(us)\n",
+        (timep->current_sec - timep->start_sec),
+        (timep->current_eval.tv_usec - timep->start_eval.tv_usec));
+}

@@ -14,5 +14,6 @@ typedef struct measure_time_s{
 void display_time(measure_time_t* timep);
 int reset_start_stamp(measure_time_t* timep);
 int update_current_stamp(measure_time_t* timep);
+void time_measure_display(measure_time_t* timep);
 
 #endif

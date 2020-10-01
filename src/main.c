@@ -4,6 +4,7 @@
 #include "hello.h"
 #include "measure.h"
 #include "common.h"
+#include "algo.h"
 
 typedef struct algo_s
 {
@@ -18,13 +19,13 @@ int measure_builder(algo_t* handle){
     return SUCCESS;
 }
 
-unsigned int fib(unsigned int id){
-    if(id == 1)
-        return 1;
-    if(id == 2)
-        return 1;
-    return fib(id - 1) + fib(id - 2);
-}
+// unsigned int fib(unsigned int id){
+//     if(id == 1)
+//         return 1;
+//     if(id == 2)
+//         return 1;
+//     return fib(id - 1) + fib(id - 2);
+// }
 
 int test_measure(algo_t* handle){
     int err_code = SUCCESS;
@@ -46,10 +47,10 @@ int test_measure(algo_t* handle){
 
     printf("    $result:\n");
     printf("    %u\n",result);
-    printf("    $time used: %lu(s) %lu(us)\n",
-        (handle->measure->current_sec - handle->measure->start_sec),
-        (handle->measure->current_eval.tv_usec - handle->measure->start_eval.tv_usec));
-
+    // printf("    $time used: %lu(s) %lu(us)\n",
+    //     (handle->measure->current_sec - handle->measure->start_sec),
+    //     (handle->measure->current_eval.tv_usec - handle->measure->start_eval.tv_usec));
+time_measure_display(handle->measure);
     return SUCCESS;
 }
 
