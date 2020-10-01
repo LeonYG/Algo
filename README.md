@@ -16,4 +16,6 @@
 # Modules:
  [measure]
     Tool for calculating running time
+ [algointerface]
+    Implemented algorithm interface
 
