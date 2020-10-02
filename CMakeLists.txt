@@ -7,6 +7,11 @@ project(algo)
 include_directories(${PROJECT_SOURCE_DIR}/include)
 LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib)
 
+IF (${LIBSRC} STREQUAL "fib")
+    add_definitions(-D OPTION_FIB)
+ENDIF (${LIBSRC} STREQUAL "fib")
+
+
 set(SRC_LIST
     src/hello.c
     src/measure.c

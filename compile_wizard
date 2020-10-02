@@ -16,7 +16,7 @@ compile_lib(){
 
 compile(){
     cd build
-    cmake ..
+    cmake .. -DLIBSRC=$DEPEND_LIBSRC
     make
     cd ..
 }
@@ -24,8 +24,10 @@ compile(){
 clean(){
     cd lib
     rm -rf CMakeFiles
+    rm cmake_install.cmake CMakeCache.txt Makefile
     cd ../build
     rm -rf CMakeFiles
+    rm cmake_install.cmake CMakeCache.txt Makefile
 }
 
 while getopts "i:" arg
