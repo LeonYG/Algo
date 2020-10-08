@@ -58,7 +58,8 @@ int main(void)
     }
 
     test_measure(algo_handle);
-
+    
+    free(algo_handle->measure);
     free(algo_handle);
     return 0;
 }
