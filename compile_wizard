@@ -1,27 +1,25 @@
 #! /bin/bash
-
 DEPEND_LIBSRC=""
-
-HELP_MSG(){
-    echo "select one algo interface to test"
-    echo "  -i algo type:[fib] [NULL] ..."
+HELP_MSG(){ 
+    echo "select one algo interface to test" 
+    echo "  -i algo type:[fib] [NULL] ..." 
 }
 
-compile_lib(){
+compile_lib(){ 
     cd lib
     cmake -DLIBSRC=$DEPEND_LIBSRC
     make
     cd ..
 }
 
-compile(){
+compile(){ 
     cd build
     cmake .. -DLIBSRC=$DEPEND_LIBSRC
     make
     cd ..
 }
 
-clean(){
+clean(){ 
     cd lib
     rm -rf CMakeFiles
     rm cmake_install.cmake CMakeCache.txt Makefile
@@ -30,20 +28,20 @@ clean(){
     rm cmake_install.cmake CMakeCache.txt Makefile
 }
 
-while getopts "i:" arg
+while getopts "i:" var
 do
-    case $arg in
-        i)
-        if [ $OPTARG=="fib" ]
-        then
-            DEPEND_LIBSRC="fib"
-        fi
-        ;;
-        ?)
-            echo "bad param"
-            HELP_MSG
-            exit 1
-        ;;
+    case "$var" in
+    i)
+    if [ $OPTARG=="fib" ]
+    then
+        DEPEND_LIBSRC="fib"
+    fi
+    ;;
+    ?)
+        echo "bad param"
+        HELP_MSG
+    exit 1
+    ;;
     esac
 done
 

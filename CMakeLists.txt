@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.0)
 
 project(algo)
 
@@ -7,6 +7,7 @@ project(algo)
 include_directories(${PROJECT_SOURCE_DIR}/include)
 LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib)
 
+set (LIBSRC "fib")
 IF (${LIBSRC} STREQUAL "fib")
     add_definitions(-D OPTION_FIB)
 ENDIF (${LIBSRC} STREQUAL "fib")
