@@ -2,14 +2,16 @@ cmake_minimum_required(VERSION 3.0)
 
 project(algo)
 
-add_subdirectory(lib)
+set(CMAKE_BUILD_TYPE Debug)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
+add_subdirectory(lib)
+
 LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib)
 
-# IF (${LIBSRC} STREQUAL "fib")
-#     add_definitions(-D OPTION_FIB)
-# ENDIF (${LIBSRC} STREQUAL "fib")
+IF (${LIBSRC} STREQUAL "fib")
+    add_definitions(-D OPTION_FIB)
+ENDIF (${LIBSRC} STREQUAL "fib")
 
 
 set(SRC_LIST

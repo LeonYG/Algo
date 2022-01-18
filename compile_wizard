@@ -22,7 +22,6 @@ compile(){
 clean(){ 
     cd lib
     rm -rf CMakeFiles
-    rm cmake_install.cmake CMakeCache.txt Makefile
     cd ../build
     rm -rf CMakeFiles
     rm cmake_install.cmake CMakeCache.txt Makefile
@@ -49,7 +48,7 @@ do
     esac
 done
 
-compile_lib
+#compile_lib
 
 compile
 

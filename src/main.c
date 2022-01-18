@@ -39,6 +39,39 @@ int test_measure(algo_t* handle){
 
     printf("    $result:\n");
     printf("    %u\n",result);
+    time_measure_display(handle->measure);
+//============================
+    err_code = reset_start_stamp(handle->measure);
+    if(err_code){
+        printf("%s%d errcode:%d\n",__FUNCTION__,__LINE__,err_code);
+        return err_code;
+    }
+    result = fib_itr(data_usr);
+    err_code = update_current_stamp(handle->measure);
+    if(err_code){
+        printf("%s%d errcode:%d\n",__FUNCTION__,__LINE__,err_code);
+        return err_code;
+    }
+
+    printf("    $result:\n");
+    printf("    %u\n",result);
+
+    time_measure_display(handle->measure);
+//============================
+    err_code = reset_start_stamp(handle->measure);
+    if(err_code){
+        printf("%s%d errcode:%d\n",__FUNCTION__,__LINE__,err_code);
+        return err_code;
+    }
+    result = fib_en(data_usr);
+    err_code = update_current_stamp(handle->measure);
+    if(err_code){
+        printf("%s%d errcode:%d\n",__FUNCTION__,__LINE__,err_code);
+        return err_code;
+    }
+
+    printf("    $result:\n");
+    printf("    %u\n",result);
 
     time_measure_display(handle->measure);
     return SUCCESS;
