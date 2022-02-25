@@ -10,8 +10,6 @@ unsigned int fib(unsigned int id){
     return fib(id - 1) + fib(id - 2);
 }
 unsigned int fib_itr(unsigned int id){
-    printf("--->\n");
-    LOG_TERM("mather %d\n",50);
     if(id == 1)
         return 1;
     if(id == 2)

@@ -81,6 +81,7 @@ int test_measure(algo_t* handle){
 int main(void)
 {
     say_hello();
+    LOG_TERM("math:%s\n","math");
 
     algo_t* algo_handle = NULL;
     int err_code = SUCCESS;

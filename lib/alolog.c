@@ -5,11 +5,11 @@
 
 #define LOG_BUFFER_RESAVE 128
 
-void aloPrintf(const S8* format, const S8* funcName, U32 line, ...)
+void aloPrintf(const S8* funcName, U32 line, const S8* format, ...)
 {
 	printf("enen\n");
 	U32 buffer_size = LOG_MAX+LOG_BUFFER_RESAVE;
-	S8 buffer[LOG_MAX+LOG_BUFFER_RESAVE];
+	S8 buffer[LOG_MAX+LOG_BUFFER_RESAVE] = {0};
 	S32 len = 0;
 	va_list valist;
 
@@ -17,5 +17,5 @@ void aloPrintf(const S8* format, const S8* funcName, U32 line, ...)
 	va_start(valist, format);
 	len += snprintf(buffer+strlen(buffer), buffer_size - strlen(buffer) - 1, format, valist);
 	va_end(valist);
-	printf(buffer);
+	printf("%s",buffer);
 }

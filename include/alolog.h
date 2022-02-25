@@ -8,11 +8,11 @@
 
 #include "alotype.h"
 
-void aloPrintf(const S8* format, const S8* funcName, U32 line, ...)
-	__attribute__((format(printf,1,4)));
+void aloPrintf(const S8* funcName, U32 line, const S8* format, ...)
+	__attribute__((format(printf,3,4)));
 
 #define LOG_MAX 512
-#define LOG_TERM(format, ...) aloPrintf(format, __FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define LOG_TERM(format, ...) aloPrintf(__FUNCTION__, __LINE__, format, __VA_ARGS__)
 
 
 #endif

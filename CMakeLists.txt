@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.0)
 
 project(algo)
+set(CMAKE_C_FLAGS "-g")
 
 ########################config env#########################
 
 set(CMAKE_BUILD_TYPE Debug)
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 IF (${LIBSRC} STREQUAL "fib")
     add_definitions(-D OPTION_FIB)
@@ -23,7 +23,7 @@ ENDIF (${LONGBIT} STREQUAL "64")
 include_directories(
     ${PROJECT_SOURCE_DIR}/include)
 
-#link_directories(${PROJECT_SOURCE_DIR}/lib)
+link_directories(${PROJECT_SOURCE_DIR}/lib)
 
 #link_libraries(libalgointerface.a)
 
@@ -41,5 +41,5 @@ add_executable(algo
 )
 
 #add lib
-target_link_libraries(algo libalgointerface.a)
+target_link_libraries(algo algointerface)
 

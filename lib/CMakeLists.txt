@@ -16,6 +16,6 @@ SET(algo_SRCS
 ENDIF (${LIBSRC} STREQUAL "fib")
 
 
-ADD_LIBRARY(algointerface STATIC ${algo_SRCS})
+add_library(algointerface STATIC ${algo_SRCS})
 
 MESSAGE("<< add algLib finish: ${algo_SRCS}")

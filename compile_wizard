@@ -38,9 +38,13 @@ check_env(){
     echo "111111 $SYS_LONG_BIT"
 }
 
-pack(){
+#pack(){}
+
+start(){
     rm -rf bin
     mkdir bin
+    rm -rf build
+    mkdir build
 }
 
 check_env
@@ -73,8 +77,10 @@ fi
 #################################
 #compile_lib
 
+start
+
 compile
 
-pack
+#pack
 
 clean
