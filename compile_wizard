@@ -1,5 +1,10 @@
 #! /bin/bash
 DEPEND_LIBSRC=""
+NULL_ARG_FLG="N"
+SYS_LONG_BIT=0
+
+BINARY_PATH="./bin"
+
 HELP_MSG(){ 
     echo "select one algo interface to test" 
     echo "  -i algo type:[fib] [NULL] ..." 
@@ -14,7 +19,7 @@ compile_lib(){
 
 compile(){ 
     cd build
-    cmake .. -DLIBSRC=$DEPEND_LIBSRC
+    cmake .. -DLIBSRC=$DEPEND_LIBSRC -DLONGBIT=$SYS_LONG_BIT
     make
     cd ..
 }
@@ -28,12 +33,24 @@ clean(){
     rm -rf lib
 }
 
+check_env(){
+    SYS_LONG_BIT=`getconf LONG_BIT`
+    echo "111111 $SYS_LONG_BIT"
+}
+
+pack(){
+    rm -rf bin
+    mkdir bin
+}
+
+check_env
+
 while getopts "i:" var
 do
+    NULL_ARG_FLG="Y"
     case "$var" in
     i)
-    if [ $OPTARG=="fib" ]
-    then
+    if [ $OPTARG = "fib" ];then
         DEPEND_LIBSRC="fib"
     fi
     ;;
@@ -48,8 +65,16 @@ do
     esac
 done
 
+if [ ${NULL_ARG_FLG} = "N" ];then
+    HELP_MSG
+    exit 1
+fi
+
+#################################
 #compile_lib
 
 compile
+
+pack
 
 clean

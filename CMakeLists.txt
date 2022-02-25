@@ -2,16 +2,32 @@ cmake_minimum_required(VERSION 3.0)
 
 project(algo)
 
+########################config env#########################
+
 set(CMAKE_BUILD_TYPE Debug)
-
-include_directories(${PROJECT_SOURCE_DIR}/include)
-add_subdirectory(lib)
-
-LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 IF (${LIBSRC} STREQUAL "fib")
     add_definitions(-D OPTION_FIB)
 ENDIF (${LIBSRC} STREQUAL "fib")
+
+IF (${LONGBIT} STREQUAL "64")
+    add_definitions(-D SYS_LONG_BIT_64)
+    MESSAGE("[warn]system 64")
+ELSEIF (${LONGBIT} STREQUAL "32")
+    add_definitions(-D SYS_LONG_BIT_32)
+    MESSAGE("[warn]system 32")
+ENDIF (${LONGBIT} STREQUAL "64")
+
+
+include_directories(
+    ${PROJECT_SOURCE_DIR}/include)
+
+#link_directories(${PROJECT_SOURCE_DIR}/lib)
+
+#link_libraries(libalgointerface.a)
+
+add_subdirectory(${PROJECT_SOURCE_DIR}/lib)
 
 
 set(SRC_LIST
@@ -25,4 +41,5 @@ add_executable(algo
 )
 
 #add lib
-TARGET_LINK_LIBRARIES(algo libalgointerface.a)
+target_link_libraries(algo libalgointerface.a)
+

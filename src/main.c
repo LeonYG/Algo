@@ -5,6 +5,7 @@
 #include "measure.h"
 #include "common.h"
 #include "algo.h"
+#include "alolog.h"
 
 typedef struct algo_s
 {
@@ -83,6 +84,7 @@ int main(void)
 
     algo_t* algo_handle = NULL;
     int err_code = SUCCESS;
+    
     if(!(algo_handle =(algo_t*)malloc(sizeof(algo_t))))
         return -1;
     err_code = measure_builder(algo_handle);
