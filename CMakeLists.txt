@@ -33,6 +33,7 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/lib)
 set(SRC_LIST
     src/hello.c
     src/measure.c
+    src/multi_thread_demo.c
 )
 
 add_executable(algo 
@@ -41,5 +42,7 @@ add_executable(algo
 )
 
 #add lib
-target_link_libraries(algo algointerface)
+target_link_libraries(algo 
+    algointerface
+    pthread)
 

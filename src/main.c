@@ -6,6 +6,7 @@
 #include "common.h"
 #include "algo.h"
 #include "alolog.h"
+#include "multi_thread_demo.h"
 
 typedef struct algo_s
 {
@@ -97,5 +98,7 @@ int main(void)
     
     free(algo_handle->measure);
     free(algo_handle);
+
+    my_thread_test1();
     return 0;
 }
