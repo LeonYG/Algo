@@ -15,7 +15,7 @@ void aloPrintf(const S8* funcName, U32 line, const S8* format, ...)
 
 	len = snprintf(buffer+strlen(buffer), buffer_size - strlen(buffer) - 1, "%s:%d ", funcName, line);
 	va_start(valist, format);
-	len += snprintf(buffer+strlen(buffer), buffer_size - strlen(buffer) - 1, format, valist);
+	len += vsnprintf(buffer+strlen(buffer), buffer_size - strlen(buffer) - 1, format, valist);
 	va_end(valist);
 	printf("%s",buffer);
 }
