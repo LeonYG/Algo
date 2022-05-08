@@ -3,6 +3,14 @@ cmake_minimum_required(VERSION 3.0)
 project(algo)
 set(CMAKE_C_FLAGS "-g")
 
+set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address -fno-omit-frame-pointer")
+
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -fno-omit-frame-pointer ")
+
+set (CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=address  -lasan -lstdc++ ")
+
+set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fsanitize=address  -lasan -lstdc++ ")
+
 ########################config env#########################
 
 set(CMAKE_BUILD_TYPE Debug)
@@ -44,5 +52,6 @@ add_executable(algo
 #add lib
 target_link_libraries(algo 
     algointerface
-    pthread)
+    pthread
+    asan)
 
