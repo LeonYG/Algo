@@ -12,5 +12,15 @@ typedef short S16;
 typedef int S32;
 typedef long long int S64;
 
+typedef enum LogLevel
+{
+	LOG_NOTICE = 0,
+	LOG_DEBUG,
+	LOG_WARN,
+	LOG_ERROR,
+	LOG_FATAL,
+	LOG_RESERVE,
+}LogLevel_e;
+
 
 #endif

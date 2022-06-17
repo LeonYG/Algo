@@ -5,9 +5,16 @@
 
 #define LOG_BUFFER_RESAVE 128
 
-void aloPrintf(const S8* funcName, U32 line, const S8* format, ...)
+char* glogLevelStr[LOG_RESERVE]={
+	[LOG_NOTICE] = "NOTICE",
+	[LOG_DEBUG]  = "DEBUG",
+	[LOG_WARN]   = "WARN",
+	[LOG_ERROR]  = "ERROR",
+	[LOG_FATAL]  = "FATAL",
+};
+
+void aloPrintf(const S8* funcName, U32 line, LogLevel_e level, const S8* format, ...)
 {
-	printf("enen\n");
 	U32 buffer_size = LOG_MAX+LOG_BUFFER_RESAVE;
 	S8 buffer[LOG_MAX+LOG_BUFFER_RESAVE] = {0};
 	S32 len = 0;
@@ -17,5 +24,5 @@ void aloPrintf(const S8* funcName, U32 line, const S8* format, ...)
 	va_start(valist, format);
 	len += vsnprintf(buffer+strlen(buffer), buffer_size - strlen(buffer) - 1, format, valist);
 	va_end(valist);
-	printf("%s",buffer);
+	printf("[%s] %s", glogLevelStr[level], buffer);
 }

@@ -29,51 +29,51 @@ int test_measure(algo_t* handle){
 
     err_code = reset_start_stamp(handle->measure);
     if(err_code){
-        printf("%s%d errcode:%d\n",__FUNCTION__,__LINE__,err_code);
+        LOG_TRRM_ERROR("errcode:%d\n",err_code);
         return err_code;
     }
     unsigned int result = fib(data_usr);
     err_code = update_current_stamp(handle->measure);
     if(err_code){
-        printf("%s%d errcode:%d\n",__FUNCTION__,__LINE__,err_code);
+        LOG_TRRM_ERROR("errcode:%d\n",err_code);
         return err_code;
     }
 
-    printf("    $result:\n");
-    printf("    %u\n",result);
+    LOG_TRRM_NOTICE("    $result:\n");
+    LOG_TRRM_NOTICE("    %u\n",result);
     time_measure_display(handle->measure);
 //============================
     err_code = reset_start_stamp(handle->measure);
     if(err_code){
-        printf("%s%d errcode:%d\n",__FUNCTION__,__LINE__,err_code);
+        LOG_TRRM_ERROR("errcode:%d\n",err_code);
         return err_code;
     }
     result = fib_itr(data_usr);
     err_code = update_current_stamp(handle->measure);
     if(err_code){
-        printf("%s%d errcode:%d\n",__FUNCTION__,__LINE__,err_code);
+        LOG_TRRM_ERROR("errcode:%d\n",err_code);
         return err_code;
     }
 
-    printf("    $result:\n");
-    printf("    %u\n",result);
+    LOG_TRRM_NOTICE("    $result:\n");
+    LOG_TRRM_NOTICE("    %u\n",result);
 
     time_measure_display(handle->measure);
 //============================
     err_code = reset_start_stamp(handle->measure);
     if(err_code){
-        printf("%s%d errcode:%d\n",__FUNCTION__,__LINE__,err_code);
+        LOG_TRRM_ERROR("errcode:%d\n",err_code);
         return err_code;
     }
     result = fib_en(data_usr);
     err_code = update_current_stamp(handle->measure);
     if(err_code){
-        printf("%s%d errcode:%d\n",__FUNCTION__,__LINE__,err_code);
+        LOG_TRRM_ERROR("errcode:%d\n",err_code);
         return err_code;
     }
 
-    printf("    $result:\n");
-    printf("    %u\n",result);
+    LOG_TRRM_NOTICE("    $result:\n");
+    LOG_TRRM_NOTICE("    %u\n",result);
 
     time_measure_display(handle->measure);
     return SUCCESS;
@@ -82,7 +82,7 @@ int test_measure(algo_t* handle){
 int main(void)
 {
     say_hello();
-    LOG_TERM("math:%s\n","math");
+    LOG_TERM(LOG_NOTICE, "math:%s\n","math");
 
     algo_t* algo_handle = NULL;
     int err_code = SUCCESS;
@@ -91,7 +91,7 @@ int main(void)
         return -1;
     err_code = measure_builder(algo_handle);
     if(err_code){
-        printf("%s%d errcode:%d\n",__FUNCTION__,__LINE__,err_code);
+        LOG_TRRM_ERROR("errcode:%d\n",err_code);
     }
 
     test_measure(algo_handle);
