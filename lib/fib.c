@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "algo.h"
 #include "alolog.h"
+//inner
+#include "fib.h"
 
 unsigned int fib(unsigned int id){
     if(id == 1)

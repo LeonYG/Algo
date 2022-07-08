@@ -22,5 +22,12 @@ typedef enum LogLevel
 	LOG_RESERVE,
 }LogLevel_e;
 
+typedef enum ModuleId{
+    M_ORIGIN = 0,
+    M_FIB,
+    M_MEASURE,
+    M_END,
+}ModuleId_e;
+
 
 #endif

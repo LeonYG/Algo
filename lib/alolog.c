@@ -12,17 +12,22 @@ char* glogLevelStr[LOG_RESERVE]={
 	[LOG_ERROR]  = "ERROR",
 	[LOG_FATAL]  = "FATAL",
 };
+char* gmoduleIdStr[M_END]={
+	[M_ORIGIN]    = "NONE",
+	[M_FIB]       = "FIB",
+	[M_MEASURE]   = "MEASURE",
+};
 
-void aloPrintf(const S8* funcName, U32 line, LogLevel_e level, const S8* format, ...)
+void aloPrintf(ModuleId_e module_id, const S8* funcName, U32 line, LogLevel_e level, const S8* format, ...)
 {
 	U32 buffer_size = LOG_MAX+LOG_BUFFER_RESAVE;
 	S8 buffer[LOG_MAX+LOG_BUFFER_RESAVE] = {0};
 	S32 len = 0;
 	va_list valist;
 
-	len = snprintf(buffer+strlen(buffer), buffer_size - strlen(buffer) - 1, "%s:%d ", funcName, line);
+	len = snprintf(buffer+strlen(buffer), buffer_size - strlen(buffer) - 1, "[%s:%d] ", funcName, line);
 	va_start(valist, format);
 	len += vsnprintf(buffer+strlen(buffer), buffer_size - strlen(buffer) - 1, format, valist);
 	va_end(valist);
-	printf("[%s] %s", glogLevelStr[level], buffer);
+	printf("[%s][%s]%s", glogLevelStr[level], gmoduleIdStr[module_id], buffer);
 }

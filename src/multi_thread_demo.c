@@ -9,7 +9,7 @@
 void* my_thread(void){
 	pid_t pid = getpid();
 	while(1){
-		LOG_TERM(LOG_NOTICE, "thread id:%d\n",pid);
+		LOG_TERM(M_ORIGIN, LOG_NOTICE, "thread id:%d\n",pid);
 		sleep(2);
 	}
 }
@@ -18,7 +18,7 @@ void my_thread_test1(void){
 	pthread_t pid;
 	S32 ret = pthread_create(&pid, NULL, (void*)my_thread, NULL);
 	if(ret != SUCCESS){
-		LOG_TERM(LOG_NOTICE, "creat thread error:%d\n",ret);
+		LOG_TERM(M_ORIGIN, LOG_NOTICE, "creat thread error:%d\n",ret);
 		return;
 	}
 	pthread_join(pid, NULL);

@@ -3,6 +3,14 @@
 
 #include <sys/time.h>
 #include <time.h>
+#include "alotype.h"
+
+#ifndef     _FIB_H_
+#define     _FIB_H_
+
+#define MID M_FIB
+
+#endif
 
 typedef struct measure_time_s{
     time_t start_sec;

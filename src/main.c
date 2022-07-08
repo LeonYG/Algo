@@ -23,7 +23,7 @@ int measure_builder(algo_t* handle){
 
 int test_measure(algo_t* handle){
     int err_code = SUCCESS;
-    printf("    \n$give a num:\n");
+    LOG_TRRM_NOTICE("    \n$give a num:\n");
     unsigned int data_usr;
     scanf("%u",&data_usr);
 
@@ -82,7 +82,7 @@ int test_measure(algo_t* handle){
 int main(void)
 {
     say_hello();
-    LOG_TERM(LOG_NOTICE, "math:%s\n","math");
+    LOG_TERM(M_ORIGIN, LOG_NOTICE, "math:%s\n","math");
 
     algo_t* algo_handle = NULL;
     int err_code = SUCCESS;
